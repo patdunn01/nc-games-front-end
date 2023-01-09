@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.reviews {
+  text-align: left;
+}
+
+.review-button {
+  margin-right: 10px;
+}
