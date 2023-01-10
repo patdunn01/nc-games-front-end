@@ -1,6 +1,7 @@
 import { getSingleReview } from "../utils/api";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function SingleReview() {
   const [reviewData, setReview] = useState([]);
@@ -12,7 +13,7 @@ export default function SingleReview() {
        setReview(review);
        setIsLoading(false);
     });
-  }, []);
+  }, [params.review_id]);
 
   if (isLoading) {
     return <p>Just Loading...</p>;
@@ -28,6 +29,7 @@ export default function SingleReview() {
             alt={reviewData.title} />
             <p className="review-text">{reviewData.review_body}</p>
             <p className="review-text">Votes: {reviewData.votes}</p>
+            <Link className="review-button" to={`/reviews/${reviewData.review_id}/comments`}>Comments</Link>
           </div>
     </div>
   );
