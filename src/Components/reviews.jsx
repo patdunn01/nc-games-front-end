@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
-import axios from 'axios'
+import { Route, Routes } from "react-router-dom";
+import { getReviews } from "../utils/api";
+import { Link } from "react-router-dom";
 
 export default function Reviews() {
   const [reviewData, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [review_id, setReviewID] = useState(0);
+  
 
   useEffect(() => {
-    axios.get(`https://nc-games-reviews-04ed.onrender.com/api/reviews`)
-      .then((data) => {
-        console.log(data.data.review[0]);
-        setReviews(data.data.review);
-      });
+    getReviews().then((reviews) => {
+      setReviews(reviews);
+      setIsLoading(false);
+    }).then(setReviewID);
   }, []);
+
+  if (isLoading) {
+    return <p>Just Loading...</p>;
+  }
 
   return (
     <header>
@@ -19,10 +27,33 @@ export default function Reviews() {
         <ul>
           {reviewData.map((review) => {
             return (
-            <div><li className="reviews" key={Math.random()}>
-                 {review.owner}'s' review
-                </li><button className="review_button">View</button>
-                </div>)
+              <div key={review.review_id}>
+                <li className="reviews">
+                  Read {review.owner}'s' review of {review.designer}'s{" "}
+                  {review.category} game
+                  <br></br>
+                  Votes : {review.votes}
+                  <br></br>
+                  <img
+                    className="review-page-image"
+                    src={review.review_img_url}
+                    alt="game review" 
+                  />
+                  <br></br>
+                  <button
+                    className="review-button"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      console.log(review_id, "line 46");
+                      setReviewID(review.review_id);
+                      console.log(review_id, "line 48");
+                    }}
+                  >
+                    View
+                  </button>
+                </li>
+              </div>
+            );
           })}
         </ul>
       </div>
