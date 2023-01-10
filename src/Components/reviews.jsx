@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import { Link } from "react-router-dom";
+
 
 export default function Reviews() {
   const [reviewData, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [review_id, setReviewID] = useState(0);
-  
+
+
 
   useEffect(() => {
     getReviews().then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
-    }).then(setReviewID);
+    })
   }, []);
 
   if (isLoading) {
@@ -40,17 +40,7 @@ export default function Reviews() {
                     alt="game review" 
                   />
                   <br></br>
-                  <button
-                    className="review-button"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      console.log(review_id, "line 46");
-                      setReviewID(review.review_id);
-                      console.log(review_id, "line 48");
-                    }}
-                  >
-                    View
-                  </button>
+                  <Link className="review-button" to={`/reviews/${review.review_id}`}>View</Link>
                 </li>
               </div>
             );
