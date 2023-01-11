@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+.header {
+  
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.nav{
+  
+  border-bottom: 5px solid rgb(0, 154, 23);
+  padding-bottom: 20px;
+}
+
 .reviews {
   text-align: left;
   margin-bottom: 10px;
