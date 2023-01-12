@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CommentCard from "./commentCard";
 import Voting from "./voting"
+import AddComments from "./addComments";
 
 export default function SingleReview() {
 const [reviewData, setReview] = useState([]);
@@ -34,12 +35,13 @@ const [isLoading, setIsLoading] = useState(true);
           src={reviewData.review_img_url}
           alt={reviewData.title}
         />
-        <p className="review-text">{reviewData.review_body}</p>
-        <p className="review-text">
-          <Voting votes={reviewData.votes} review_id={reviewData.review_id}/>
-        </p>
+        <div className="review-text">{reviewData.review_body}</div>
+        <div>
+        <Voting className="review-text" votes={reviewData.votes} review_id={reviewData.review_id}/>
+        </div>
       </div>
       <CommentCard />
+      <AddComments />
     </div>
   );
 }

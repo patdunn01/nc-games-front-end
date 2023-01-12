@@ -24,34 +24,71 @@ code {
   padding-bottom: 20px;
 }
 
+.home-page-reviews {
+  list-style: none;
+  text-align: center;
+  margin-top: 1em;
+  max-width: 20em;
+  line-height: 1.2em;
+}
+
+.home-page-image {
+  width: 250px;
+  height: 200px;
+  object-fit:cover;
+  margin-top: 10px;
+  border-radius: 80px;
+}
+
+.home-page-review-button {
+  margin: 50px;
+  color:rgb(0, 154, 23)
+}
+.reviews-container{
+  border-top: 5px solid rgb(0, 154, 23);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  background-color: rgb(230, 230, 230);
+}
+
 .reviews {
-  text-align: left;
-  margin-bottom: 10px;
+  list-style: none;
+  text-align: center;
+  margin-top: 1em;
+  max-width: 20em;
+  line-height: 1.2em;
 }
 
 .review-button {
-  margin: 5px;
+  color: black;
   padding: 3px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgb(255, 255, 255);
   text-decoration: none;
   align-content: center;
 }
 
+.review-button:hover {
+  color:white;
+  background-color: black;
+}
+
 .review-page-image {
-  width: 500px;
-  height: 400px;
+  width: 250px;
+  height: 200px;
   object-fit:cover;
   margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 40px;
-  border: 30px solid rgb(0, 154, 23);
+  border: 20px solid rgb(0, 154, 23);
 }
 
 .review-page-image:hover {
-  border: 30px solid rgb(26, 114, 84);
   opacity: 80%;
   cursor: pointer;
+  border: 20px double rgb(0, 154, 23);
 }
 
 .review-image {
@@ -59,28 +96,49 @@ code {
   height: 200px;
   object-fit:cover;
   margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 40px;
   border: 30px solid rgb(0, 154, 23);
+  
+}
+
+.review-image:hover{
+  border: 30px double rgb(0, 154, 23);
+  margin: 5px;
 }
 
 .review-text {  
+  font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 100px;
   margin-right: 100px;
-  text-align: center;
+  text-align: left;
   width: auto;
-  background-color:rgb(247, 239, 229);
+  background-color:rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.review-text::first-letter{
+  font-size: 35px;
+  font-family:sans-serif
 }
 
 .comments {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: left;
   line-height: 2;
   list-style: none;
   border-radius: 20px;
-  border: 15px solid rgb(0, 154, 23);
+  border: 5px solid rgb(0, 154, 23);
   margin: 10px;
-  padding: 10px;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.comments:hover {
+  border: 5px double rgb(0, 154, 23);
 }
 
 .timestamp {
@@ -89,29 +147,6 @@ code {
   font-weight: bolder;
 }
 
-.home-page-review-container {
-  list-style: none;
-  margin: 3px;
-}
-
-.home-page-reviews {
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-.home-page-image {
-  width: 250px;
-  height: 200px;
-  object-fit:cover;
-  margin-top: 5px;
-  border-radius: 40px;
-  border: 30px solid rgb(0, 154, 23);
-}
-
-.home-page-review-button {
-  margin: 50px;
-  color:rgb(0, 154, 23)
-}
 
 .footer {
   border-top: 5px solid rgb(0, 154, 23);
@@ -119,8 +154,73 @@ code {
   margin: 40px;
 }
 
-.votes-button{
-  margin: 2px;
-  font-size:large;
-  background-color:rgb(166, 165, 165);
+.votes-button__up, .votes-button__down{
+  font-size: larger;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color:rgb(247, 239, 229);
+  cursor: pointer;
+}
+
+.votes-button__up:hover, .votes-button__down:hover{
+  background-color:rgb(186, 177, 166);
+  cursor: pointer;
+}
+
+.commentAdder{
+  border-radius: 20px;
+  border: 5px solid rgb(0, 154, 23);
+  margin: 10px;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.commentAdder:focus{
+  outline: none;
+  border: 5px solid rgb(29, 65, 210);
+  width: 20em;
+  margin: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.cancel-button {
+  font-size: small;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px;
+  border-radius: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color:rgb(255, 255, 255);
+}
+
+.cancel-button:hover{
+  background-color:rgb(177, 177, 177);
+  cursor: pointer;
+}
+
+.add-comment-button{
+  font-size: small;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px;
+  border-radius: 50px;
+  margin-left: 5px;
+  margin-right: 10px;
+  background-color:rgb(255, 255, 255);
+}
+
+.add-comment-button {
+  font-size: medium;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color:rgb(247, 239, 229);
 }

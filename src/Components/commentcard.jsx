@@ -30,7 +30,7 @@ export default function CommentCard() {
 
     return (
       <div>
-        <h1 className="App">Comments</h1>
+        <h2>Comments</h2>
         <div key={commentsData.comment_id}>
         <ul>
           {commentsData.map((comment) => {

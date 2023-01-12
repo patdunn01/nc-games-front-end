@@ -24,11 +24,11 @@ export default function Home() {
     <header>
       <div>
         <h1 className="App">Featured Reviews</h1>
-        <ul>
+        <ul className="reviews-container">
           {reviewData.map((review) => {
             return (
               <div key={review.review_id}>
-                <li className="home-page-review-container">
+                <li className="home-page-reviews">
                   Read {review.owner}'s' review of {review.designer}'s{" "}
                   {review.category} game
                   <br></br>

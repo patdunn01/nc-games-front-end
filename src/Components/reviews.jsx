@@ -24,7 +24,7 @@ export default function Reviews() {
     <header>
       <div>
         <h1 className="App">Reviews</h1>
-        <ul>
+        <ul className="reviews-container">
           {reviewData.map((review) => {
             return (
               <div key={review.review_id}>
@@ -40,8 +40,8 @@ export default function Reviews() {
                     alt="game review" 
                   />
                   <br></br>
-                  <Link className="review-button" to={`/reviews/${review.review_id}`}>View</Link>
                 </li>
+                <Link className="review-button" to={`/reviews/${review.review_id}`}>View</Link>
               </div>
             );
           })}
