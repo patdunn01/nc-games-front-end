@@ -3,7 +3,7 @@ import { getSingleReviewComments } from "../utils/api";
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 
-export default function Comment_Card() {
+export default function CommentCard() {
     const [commentsData, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const params = useParams() 
@@ -16,7 +16,7 @@ export default function Comment_Card() {
     }, [params.review_id]);
 
     if (isLoading) {
-        return <p>Just Loading...</p>;
+        return <p>Just Loading the comments bit...</p>;
       }
 
     if(commentsData.length === 0){
@@ -30,7 +30,7 @@ export default function Comment_Card() {
 
     return (
       <div>
-        <h1 className="App">Reviews Comments</h1>
+        <h2>Comments</h2>
         <div key={commentsData.comment_id}>
         <ul>
           {commentsData.map((comment) => {

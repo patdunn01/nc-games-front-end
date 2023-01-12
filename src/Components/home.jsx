@@ -3,7 +3,7 @@ import { getReviews } from "../utils/api";
 import { Link } from "react-router-dom";
 
 
-export default function Reviews() {
+export default function Home() {
   const [reviewData, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,25 +23,23 @@ export default function Reviews() {
   return (
     <header>
       <div>
-        <h1 className="App">Reviews</h1>
+        <h1 className="App">Featured Reviews</h1>
         <ul className="reviews-container">
           {reviewData.map((review) => {
             return (
               <div key={review.review_id}>
-                <li className="reviews">
+                <li className="home-page-reviews">
                   Read {review.owner}'s' review of {review.designer}'s{" "}
                   {review.category} game
                   <br></br>
-                  Votes : {review.votes}
-                  <br></br>
                   <img
-                    className="review-page-image"
+                    className="home-page-image"
                     src={review.review_img_url}
                     alt="game review" 
                   />
                   <br></br>
+                  <Link className="home-page-review-button" to={`/reviews/${review.review_id}`}>Read Review</Link>
                 </li>
-                <Link className="review-button" to={`/reviews/${review.review_id}`}>View</Link>
               </div>
             );
           })}

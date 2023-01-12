@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Footer = () => {
   return (
-    <div className="nav">
+    <div className="footer">
     <nav>
-      <Link to="/">Home</Link>
-      <span> | </span>
       <Link to="/reviews">Reviews</Link>
       <span> | </span>
       <Link to="/categories">Categories</Link>
@@ -16,4 +14,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Footer;
