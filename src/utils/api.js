@@ -27,3 +27,10 @@ export const addVotes = (review_id, increaseVotes) => {
     inc_votes: increaseVotes,
   });
 };
+
+export const addComments = (review_id, createsNewComment) => {
+  return reviewsApi.post(`/reviews/${review_id}/comments`, {
+    body: createsNewComment,
+    user_name: "tickle122",
+  });
+};
