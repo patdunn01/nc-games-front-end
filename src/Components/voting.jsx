@@ -14,7 +14,6 @@ export default function Voting({ votes, review_id }) {
     addVotes(review_id, 1).catch((err) => {
       setvotesChange((currVotesChange) => currVotesChange - 1);
       setErr("Something went wrong, please try again");
-      //disabled button function
     });
   }
 

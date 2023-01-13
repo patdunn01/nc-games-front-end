@@ -102,11 +102,6 @@ code {
   
 }
 
-.review-image:hover{
-  border: 30px double rgb(0, 154, 23);
-  margin: 5px;
-}
-
 .review-text {  
   font-size: 20px;
   padding-top: 10px;
@@ -130,7 +125,7 @@ code {
   line-height: 2;
   list-style: none;
   border-radius: 20px;
-  border: 5px solid rgb(0, 154, 23);
+  border: 2px solid rgb(0, 154, 23);
   margin: 10px;
   padding-left: 1em;
   padding-top: 0.5em;
@@ -138,7 +133,7 @@ code {
 }
 
 .comments:hover {
-  border: 5px double rgb(0, 154, 23);
+  border: 2px double rgb(0, 154, 23);
 }
 
 .timestamp {
@@ -171,17 +166,19 @@ code {
 
 .commentAdder{
   border-radius: 20px;
-  border: 5px solid rgb(0, 154, 23);
+  border: 2px solid rgb(0, 154, 23);
+  width: 20em;
   margin: 10px;
   padding-left: 1em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
 }
 
 .commentAdder:focus{
   outline: none;
-  border: 5px solid rgb(29, 65, 210);
-  width: 20em;
+  border: 2px solid rgb(29, 65, 210);
   margin: 10px;
   padding-left: auto;
   padding-right: auto;
@@ -190,13 +187,14 @@ code {
 }
 
 .cancel-button {
-  font-size: small;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 0px;
   border-radius: 50px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   background-color:rgb(255, 255, 255);
 }
 
@@ -206,21 +204,39 @@ code {
 }
 
 .add-comment-button{
-  font-size: small;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 10px;
   border: 0px;
   border-radius: 50px;
   margin-left: 5px;
-  margin-right: 10px;
-  background-color:rgb(255, 255, 255);
+  margin-right: 12px;
+  background-color:rgb(216, 216, 216);
 }
 
-.add-comment-button {
-  font-size: medium;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color:rgb(247, 239, 229);
+.add-comment-button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 154, 23);
+}
+
+.add-comment-button:active {
+  cursor: pointer;
+  padding: 8px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.commentHandles{
+  color: rgb(109, 109, 109);
+  display: inline;
+  margin-right: 2em;
+  background-color: rgba(219, 218, 218, 0.327);
+  border-radius: 5em;
+  padding: 0.3em;
+}
+
+.line{
+  margin-top: 1em;
+  height: 2px;
+  width: 15em;
+  background-color: black;
 }
