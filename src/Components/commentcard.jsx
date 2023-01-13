@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getSingleReviewComments } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import CommentAdder from "./commentAdder";
+import CommentAdder from './commentAdder';
 
 export default function CommentCard() {
   const [commentsData, setComments] = useState([]);
