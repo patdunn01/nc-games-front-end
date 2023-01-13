@@ -119,6 +119,16 @@ code {
   font-family:sans-serif
 }
 
+.form{
+  resize: none;
+}
+
+.comments-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .comments {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: left;
@@ -127,9 +137,9 @@ code {
   border-radius: 20px;
   border: 2px solid rgb(0, 154, 23);
   margin: 10px;
-  padding-left: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
 }
 
 .comments:hover {
@@ -174,6 +184,7 @@ code {
   padding-bottom: 0.5em;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: medium;
+  resize: none;
 }
 
 .commentAdder:focus{
@@ -228,10 +239,9 @@ code {
 .commentHandles{
   color: rgb(109, 109, 109);
   display: inline;
-  margin-right: 2em;
   background-color: rgba(219, 218, 218, 0.327);
   border-radius: 5em;
-  padding: 0.3em;
+  padding: 0.5em;
 }
 
 .line{

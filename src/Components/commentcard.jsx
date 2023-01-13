@@ -34,7 +34,7 @@ export default function CommentCard() {
       <h2>Comments</h2>
       <CommentAdder commentsData={commentsData} setComments={setComments}/>
       <div key={commentsData.comment_id}>
-        <ul>
+        <ul className="comments-container">
           {commentsData.map((comment) => {
             return (
               <div key={comment.comment_id}>

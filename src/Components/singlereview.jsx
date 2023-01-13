@@ -36,7 +36,7 @@ const [isLoading, setIsLoading] = useState(true);
         />
         <div className="review-text">{reviewData.review_body}</div>
         <div>
-        <Voting className="review-text" votes={reviewData.votes} review_id={reviewData.review_id}/>
+        <Voting votes={reviewData.votes} review_id={reviewData.review_id}/>
         </div>
       </div>
       <CommentCard />
